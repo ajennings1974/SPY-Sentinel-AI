@@ -1,0 +1,2 @@
+signals,accuracy,average_return_15m,median_return_15m,passed,verdict
+99,55.56,0.0047,0.0087,True,PASSES SECOND VALIDATION

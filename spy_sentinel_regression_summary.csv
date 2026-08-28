@@ -1,0 +1,2 @@
+mean_correlation,worst_correlation,mean_mae_pct,signal_threshold_pct,signals,signal_accuracy,avg_directional_return,median_directional_return,candidate,verdict
+-0.11279,-0.28474,0.155,0.1,250,27.6,-0.10138,-0.1186,False,REGRESSION MODEL NOT STRONG ENOUGH

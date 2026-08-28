@@ -1,0 +1,2 @@
+signals,accuracy,avg_return,median_return,ci_low,ci_high,passed,verdict
+217,41.935,-0.08945,-0.06571,35.566,48.585,False,BULLISH MEAN REVERSION DOES NOT PASS THIRD-PERIOD TEST

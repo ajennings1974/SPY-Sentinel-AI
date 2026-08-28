@@ -1,0 +1,2 @@
+trend,volatility,session,direction,development_accuracy,independent_observations,independent_accuracy,accuracy_change,avg_directional_return,median_directional_return,passed,verdict
+DOWNTREND,HIGH_VOL,AFTERNOON,BEARISH,64.865,238,50.84,-14.025,0.05778,0.00975,False,DOES NOT PASS INDEPENDENT REGIME VALIDATION

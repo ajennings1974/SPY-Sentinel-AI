@@ -1,0 +1,2 @@
+candidate,development_accuracy,independent_signals,independent_accuracy,accuracy_change,avg_directional_return,median_directional_return,passed,verdict
+EMA_SLOPE,55.31,330,49.394,-5.916,-0.00438,-0.00753,False,DOES NOT PASS INDEPENDENT CONFLUENCE VALIDATION

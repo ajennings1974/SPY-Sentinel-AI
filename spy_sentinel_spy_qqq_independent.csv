@@ -1,0 +1,2 @@
+development_signals,development_accuracy,independent_signals,independent_accuracy,accuracy_change,avg_directional_return,median_directional_return,passed,verdict
+682,57.918,999,50.951,-6.967,0.00109,0.00542,False,DOES NOT PASS INDEPENDENT SPY-QQQ VALIDATION

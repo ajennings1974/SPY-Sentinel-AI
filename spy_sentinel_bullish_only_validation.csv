@@ -1,0 +1,2 @@
+development_signals,development_accuracy,development_avg_return,independent_signals,independent_accuracy,independent_avg_return,independent_median_return,accuracy_change,ci_low,ci_high,passed,verdict
+445,60.674,0.02429,715,53.147,-0.00455,0.01459,-7.527,49.482,56.778,False,DOES NOT PASS BULLISH-ONLY INDEPENDENT VALIDATION

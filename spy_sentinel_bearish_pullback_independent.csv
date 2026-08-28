@@ -1,0 +1,2 @@
+development_accuracy,independent_signals,independent_accuracy,accuracy_change,avg_directional_return,median_directional_return,ci_low,ci_high,passed,verdict
+57.0,361,47.645,-9.355,0.00314,-0.00543,42.545,52.795,False,DOES NOT PASS BEARISH-PULLBACK INDEPENDENT VALIDATION

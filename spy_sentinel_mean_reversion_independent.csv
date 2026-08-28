@@ -1,0 +1,2 @@
+development_accuracy,development_signals,independent_accuracy,independent_signals,accuracy_change,avg_directional_return,median_directional_return,passed,verdict
+55.124,283,48.0,375,-7.124,0.02367,-0.00538,False,DOES NOT PASS INDEPENDENT MEAN-REVERSION VALIDATION

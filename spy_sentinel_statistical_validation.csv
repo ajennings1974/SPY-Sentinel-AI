@@ -1,0 +1,2 @@
+signals,wins,win_rate,ci_low,ci_high,bootstrap_return_low,bootstrap_return_high,accuracy_edge,avg_forward_return,statistically_clear,validation_consistent,research_gate_pass
+99,55,55.5556,45.742,64.9541,-0.016795,0.026507,5.5556,0.004666,False,False,False

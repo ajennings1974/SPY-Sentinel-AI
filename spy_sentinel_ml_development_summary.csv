@@ -1,0 +1,2 @@
+mean_accuracy,worst_accuracy,best_accuracy,high_confidence_signals,high_confidence_accuracy,candidate,verdict
+49.53,41.026,56.624,564,46.277,False,ML MODEL NOT STRONG ENOUGH

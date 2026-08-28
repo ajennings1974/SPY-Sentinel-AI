@@ -1,0 +1,2 @@
+mean_accuracy,worst_accuracy,best_accuracy,high_confidence_signals,high_confidence_accuracy,candidate,verdict
+46.923,41.239,55.128,1169,47.305,False,RF MODEL NOT STRONG ENOUGH

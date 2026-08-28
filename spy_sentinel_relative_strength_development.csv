@@ -1,0 +1,2 @@
+threshold,signals,accuracy,avg_return,median_return,candidate,verdict
+0.001,48,64.583,0.04812,0.10618,False,NOT STRONG ENOUGH

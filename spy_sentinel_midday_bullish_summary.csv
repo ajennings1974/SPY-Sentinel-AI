@@ -1,0 +1,2 @@
+total_signals,test_signals,mean_accuracy,worst_fold,best_fold,avg_return_15m,median_return_15m,validated,verdict
+48,29,79.63,70.0,88.89,0.0187,0.0155,False,MIDDAY BULLISH NOT YET PROVEN

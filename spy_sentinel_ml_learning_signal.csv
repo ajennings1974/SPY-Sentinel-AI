@@ -1,0 +1,2 @@
+best_horizon,model_accuracy,baseline_accuracy,excess_accuracy,balanced_accuracy,auc,learning_signal,verdict
+90m,48.376,42.353,6.024,50.147,51.415,False,MODEL DOES NOT BEAT SIMPLE BASELINE RELIABLY

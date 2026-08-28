@@ -1,0 +1,9 @@
+strategy_file,accuracy,signals,avg_return_pct,passed
+spy_sentinel_bullish_only_validation.csv,53.147,715,,False
+spy_sentinel_spy_qqq_independent.csv,50.951,999,0.00109,False
+spy_sentinel_regime_independent.csv,50.84,238,0.05778,False
+spy_sentinel_trend_regime_independent.csv,50.494,1113,-0.0031,False
+spy_sentinel_confluence_independent.csv,49.394,330,-0.00438,False
+spy_sentinel_corrected_momentum_validation.csv,49.097,277,-0.01298,False
+spy_sentinel_mean_reversion_independent.csv,48.0,375,0.02367,False
+spy_sentinel_bearish_pullback_independent.csv,47.645,361,0.00314,False
