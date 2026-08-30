@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPY Sentinel AI</title>
+
+<style>
+:root {
+    --bg: #08111f;
+    --panel: #111d31;
+    --panel2: #16243c;
+    --text: #f4f7fb;
+    --muted: #9fb0c9;
+    --red: #ff626d;
+    --green: #63e49b;
+    --amber: #ffca68;
+    --blue: #62a8ff;
+    --border: #263854;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at top right, #10254a 0%, transparent 35%),
+        var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 32px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: rgba(17,29,49,.90);
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.brand {
+    font-weight: 700;
+}
+
+.top-status {
+    color: var(--amber);
+    font-weight: 700;
+}
+
+.hero {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 46px;
+    margin: 0 0 6px;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.decision {
+    border: 1px solid var(--red);
+    background: rgba(255,98,109,.06);
+    padding: 22px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 28px rgba(255,98,109,.08);
+}
+
+.decision-label {
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.decision h2 {
+    color: var(--red);
+    font-size: 31px;
+    margin: 6px 0 8px;
+}
+
+.decision p {
+    margin: 0;
+    color: #d8e1ef;
+    line-height: 1.5;
+}
+
+.section-title {
+    margin: 28px 0 12px;
+    font-size: 19px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.card {
+    background: linear-gradient(180deg, var(--panel2), var(--panel));
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 18px;
+    min-height: 116px;
+}
+
+.card h3 {
+    margin: 0 0 14px;
+    font-size: 15px;
+    color: #dce6f5;
+}
+
+.metric {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.fail {
+    color: var(--red);
+}
+
+.pass {
+    color: var(--green);
+}
+
+.locked {
+    color: var(--amber);
+}
+
+.info {
+    color: var(--blue);
+}
+
+.validation {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.panel {
+    background: rgba(17,29,49,.92);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.panel h3 {
+    margin-top: 0;
+}
+
+.timeline-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #20314c;
+}
+
+.timeline-row:last-child {
+    border-bottom: 0;
+}
+
+.timeline-name {
+    color: #dce6f5;
+}
+
+.timeline-result {
+    font-weight: 700;
+    color: var(--red);
+}
+
+.guardrail {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #20314c;
+}
+
+.guardrail:last-child {
+    border-bottom: 0;
+}
+
+.footer {
+    margin-top: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .validation {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="topbar">
+    <div class="brand">SPY SENTINEL AI</div>
+    <div class="top-status">EXECUTION GATE: LOCKED</div>
+</div>
+
+<div class="hero">
+    <h1>Evidence Before Execution</h1>
+    <div class="subtitle">
+        AI-assisted market research, independent validation and automated risk gating
+    </div>
+</div>
+
+<div class="decision">
+    <div class="decision-label">Current System Decision</div>
+    <h2>NO TRADE</h2>
+    <p>
+        Current evidence does not justify autonomous execution.
+        SPY Sentinel blocks paper and live trading when a strategy fails
+        independent validation or does not demonstrate a durable edge.
+    </p>
+</div>
+
+<div class="section-title">Research Status</div>
+
+<div class="grid">
+
+<div class="card">
+    <h3>Historical Strategy Edge</h3>
+    <div class="metric fail">NOT PROVEN</div>
+</div>
+
+<div class="card">
+    <h3>True Holdout Candidate</h3>
+    <div class="metric fail">FAILED</div>
+</div>
+
+<div class="card">
+    <h3>Adaptive Rolling Selection</h3>
+    <div class="metric fail">FAILED</div>
+</div>
+
+<div class="card">
+    <h3>Multi-Market Model</h3>
+    <div class="metric fail">FAILED</div>
+</div>
+
+<div class="card">
+    <h3>Extreme-Dislocation Family</h3>
+    <div class="metric fail">FAILED</div>
+</div>
+
+<div class="card">
+    <h3>Fresh Aug 17–28 Data</h3>
+    <div class="metric pass">UNTOUCHED</div>
+</div>
+
+<div class="card">
+    <h3>Paper Trading</h3>
+    <div class="metric locked">LOCKED</div>
+</div>
+
+<div class="card">
+    <h3>Live Trading</h3>
+    <div class="metric locked">LOCKED</div>
+</div>
+
+</div>
+
+<div class="validation">
+
+<div class="panel">
+    <h3>Independent Validation Pipeline</h3>
+
+    <div class="timeline-row">
+        <div class="timeline-name">Chronological development testing</div>
+        <div class="timeline-result">FAILED</div>
+    </div>
+
+    <div class="timeline-row">
+        <div class="timeline-name">One-time untouched holdout</div>
+        <div class="timeline-result">FAILED</div>
+    </div>
+
+    <div class="timeline-row">
+        <div class="timeline-name">10-window rolling evaluation</div>
+        <div class="timeline-result">FAILED</div>
+    </div>
+
+    <div class="timeline-row">
+        <div class="timeline-name">Cross-market generalization</div>
+        <div class="timeline-result">FAILED</div>
+    </div>
+
+</div>
+
+<div class="panel">
+    <h3>Risk Guardrails</h3>
+
+    <div class="guardrail">
+        <span>Data leakage protection</span>
+        <strong class="pass">ACTIVE</strong>
+    </div>
+
+    <div class="guardrail">
+        <span>Fresh-data preservation</span>
+        <strong class="pass">ACTIVE</strong>
+    </div>
+
+    <div class="guardrail">
+        <span>Paper execution</span>
+        <strong class="locked">LOCKED</strong>
+    </div>
+
+    <div class="guardrail">
+        <span>Live execution</span>
+        <strong class="locked">LOCKED</strong>
+    </div>
+
+</div>
+
+</div>
+
+<div class="footer">
+    SPY Sentinel AI is designed to reject weak strategies rather than
+    manufacture confidence. Trading permissions remain locked until
+    independent evidence demonstrates a repeatable, economically meaningful edge.
+</div>
+
+</div>
+</body>
+</html>
+
+<style>
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.topbar {
+    margin-bottom: 18px;
+}
+
+.hero {
+    margin-bottom: 18px;
+}
+
+.decision {
+    margin-bottom: 18px;
+}
+
+.card {
+    min-height: 100px;
+}
+
+.research-mode {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border: 1px solid #263854;
+    border-radius: 10px;
+    background: rgba(17,29,49,.75);
+    color: #9fb0c9;
+    font-size: 14px;
+}
+
+.scorecard {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.score {
+    background: #111d31;
+    border: 1px solid #263854;
+    border-radius: 11px;
+    padding: 14px;
+}
+
+.score-label {
+    color: #9fb0c9;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.score-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+    .scorecard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const decision = document.querySelector(".decision");
+
+    const research = document.createElement("div");
+    research.className = "research-mode";
+    research.innerHTML =
+        "<strong>RESEARCH MODE:</strong> No orders sent. " +
+        "Paper and live execution remain disabled.";
+
+    decision.insertAdjacentElement("afterend", research);
+
+    const scorecard = document.createElement("div");
+    scorecard.className = "scorecard";
+    scorecard.innerHTML = `
+        <div class="score">
+            <div class="score-label">Latest Mean Balanced Accuracy</div>
+            <div class="score-value">50.32%</div>
+        </div>
+
+        <div class="score">
+            <div class="score-label">Latest Mean AUC</div>
+            <div class="score-value">50.32%</div>
+        </div>
+
+        <div class="score">
+            <div class="score-label">Positive Rolling Windows</div>
+            <div class="score-value">6 / 10</div>
+        </div>
+
+        <div class="score">
+            <div class="score-label">Fresh Validation Period</div>
+            <div class="score-value pass">PRESERVED</div>
+        </div>
+    `;
+
+    research.insertAdjacentElement("afterend", scorecard);
+});
+</script>
