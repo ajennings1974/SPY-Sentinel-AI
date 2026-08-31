@@ -1,0 +1,36 @@
+{
+  "generated_utc": "2026-08-31T19:13:27.195045+00:00",
+  "system": "SPY Sentinel AI",
+  "environment": "ALPACA PAPER",
+  "live_trading_enabled": false,
+  "research_edge_proven": false,
+  "execution_mode": "CONTROLLED PAPER DEMO",
+  "trade": {
+    "symbol": "SPY260831P00767000",
+    "quantity": 1.0,
+    "entry_price": 1.4,
+    "entry_time": "2026-08-31 17:15:33.159096+00:00",
+    "exit_price": 0.84,
+    "exit_time": "2026-08-31 17:53:41.132395+00:00",
+    "pnl_dollars": -55.99999999999999,
+    "pnl_pct": -0.4,
+    "exit_reason": "STOP_LOSS"
+  },
+  "entry_guardrails": {
+    "max_contracts": 1,
+    "max_demo_cost": 250,
+    "one_position_guard": true,
+    "paper_only": true
+  },
+  "exit_guardrails": {
+    "profit_target_pct": 20,
+    "stop_loss_pct": -15,
+    "max_hold_minutes": 45,
+    "automatic_monitor": true
+  },
+  "decision_explanation": {
+    "why_trade_allowed": "Controlled paper-demo override proved the execution pipeline. It did not represent a validated profitability claim.",
+    "why_exit_occurred": "The position crossed the configured paper stop-loss threshold.",
+    "what_bot_learned": "Execution capability and strategy profitability are separate. Risk controls remained active after entry."
+  }
+}

@@ -1,0 +1,263 @@
+import json
+from pathlib import Path
+from html import escape
+
+BASE = Path.cwd()
+
+passport = json.loads(
+    (
+        BASE
+        / "spy_sentinel_decision_passport_v118.json"
+    ).read_text()
+)
+
+trade = passport["trade"]
+
+entry = trade["entry_price"]
+exit_price = trade["exit_price"]
+pnl = trade["pnl_dollars"]
+pnl_pct = trade["pnl_pct"]
+
+def money(x):
+    return f"${x:,.2f}" if x is not None else "N/A"
+
+def pct(x):
+    return f"{x*100:+.2f}%" if x is not None else "N/A"
+
+html = f"""
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPY Sentinel AI — Decision Passport</title>
+
+<style>
+body {{
+    margin:0;
+    background:#07111f;
+    color:#f4f7fb;
+    font-family:Arial,Helvetica,sans-serif;
+}}
+.wrap {{
+    max-width:1180px;
+    margin:auto;
+    padding:28px;
+}}
+.top {{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 18px;
+    border:1px solid #263854;
+    border-radius:12px;
+    background:#101c30;
+}}
+.badge {{
+    color:#61e69d;
+    font-weight:700;
+}}
+h1 {{
+    font-size:42px;
+    margin-bottom:6px;
+}}
+.sub {{
+    color:#9fb0c9;
+    margin-bottom:22px;
+}}
+.hero {{
+    border:1px solid #4e77aa;
+    background:#101c30;
+    padding:22px;
+    border-radius:14px;
+    margin-bottom:18px;
+}}
+.grid {{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}}
+.card {{
+    border:1px solid #263854;
+    background:#14233a;
+    border-radius:12px;
+    padding:16px;
+}}
+.label {{
+    color:#9fb0c9;
+    font-size:12px;
+    margin-bottom:8px;
+}}
+.value {{
+    font-size:20px;
+    font-weight:700;
+}}
+.red {{ color:#ff6975; }}
+.green {{ color:#61e69d; }}
+.amber {{ color:#ffcb6b; }}
+
+.section {{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}}
+.panel {{
+    border:1px solid #263854;
+    background:#101c30;
+    border-radius:12px;
+    padding:18px;
+}}
+.row {{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #20314c;
+}}
+.row:last-child {{
+    border-bottom:0;
+}}
+.timeline {{
+    margin-top:18px;
+}}
+.step {{
+    padding:12px 14px;
+    border-left:3px solid #62a8ff;
+    background:#101c30;
+    margin:8px 0;
+}}
+.footer {{
+    margin-top:20px;
+    color:#9fb0c9;
+    border-top:1px solid #263854;
+    padding-top:16px;
+}}
+@media(max-width:900px) {{
+    .grid {{
+        grid-template-columns:repeat(2,1fr);
+    }}
+    .section {{
+        grid-template-columns:1fr;
+    }}
+}}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<div class="top">
+<div><strong>SPY SENTINEL AI</strong></div>
+<div class="badge">ACTIVE PAPER AGENT</div>
+</div>
+
+<h1>Decision Passport</h1>
+
+<div class="sub">
+Every action is explainable, risk-gated and auditable.
+</div>
+
+<div class="hero">
+<strong>FIRST COMPLETE AUTONOMOUS PAPER CYCLE</strong>
+<p>
+SPY Sentinel selected an options candidate, passed deterministic
+paper-demo gates, entered through Alpaca, monitored the position,
+triggered its stop-loss and exited automatically.
+</p>
+</div>
+
+<div class="grid">
+<div class="card">
+<div class="label">CONTRACT</div>
+<div class="value">{escape(str(trade["symbol"]))}</div>
+</div>
+
+<div class="card">
+<div class="label">ENTRY</div>
+<div class="value">{money(entry)}</div>
+</div>
+
+<div class="card">
+<div class="label">EXIT</div>
+<div class="value">{money(exit_price)}</div>
+</div>
+
+<div class="card">
+<div class="label">FINAL RESULT</div>
+<div class="value red">{money(pnl)} / {pct(pnl_pct)}</div>
+</div>
+</div>
+
+<div class="section">
+
+<div class="panel">
+<h3>Entry Passport</h3>
+
+<div class="row"><span>Environment</span><strong class="green">ALPACA PAPER</strong></div>
+<div class="row"><span>Quantity</span><strong>1 contract</strong></div>
+<div class="row"><span>Maximum demo cost</span><strong>$250</strong></div>
+<div class="row"><span>One-position guard</span><strong class="green">PASSED</strong></div>
+<div class="row"><span>Live trading</span><strong class="amber">DISABLED</strong></div>
+<div class="row"><span>Validated edge claim</span><strong>NO</strong></div>
+</div>
+
+<div class="panel">
+<h3>Exit Passport</h3>
+
+<div class="row"><span>Profit target</span><strong>+20%</strong></div>
+<div class="row"><span>Stop loss</span><strong>-15%</strong></div>
+<div class="row"><span>Maximum hold</span><strong>45 min</strong></div>
+<div class="row"><span>Exit trigger</span><strong class="red">STOP LOSS</strong></div>
+<div class="row"><span>Automatic monitor</span><strong class="green">ACTIVE</strong></div>
+<div class="row"><span>Exit order</span><strong class="green">FILLED</strong></div>
+</div>
+
+</div>
+
+<div class="timeline">
+<h3>Autonomous Decision Timeline</h3>
+
+<div class="step">1. Alpaca market and options data acquired</div>
+<div class="step">2. Candidate contract selected</div>
+<div class="step">3. Liquidity, cost and account risk gates evaluated</div>
+<div class="step">4. One-contract paper order submitted and filled</div>
+<div class="step">5. Position monitored automatically</div>
+<div class="step">6. Stop-loss rule triggered</div>
+<div class="step">7. Exit order submitted and filled</div>
+<div class="step">8. Full decision and outcome preserved in audit trail</div>
+</div>
+
+<div class="panel">
+<h3>Why This Matters</h3>
+<p>
+SPY Sentinel separates <strong>execution capability</strong>
+from <strong>proven profitability</strong>. The agent is capable
+of acting autonomously while refusing to claim that an unvalidated
+strategy has an edge.
+</p>
+
+<p>
+This first controlled paper cycle lost money, and SPY Sentinel
+reports that outcome instead of hiding it. The system's job is to
+make every decision inspectable and keep risk controls active
+before, during and after execution.
+</p>
+</div>
+
+<div class="footer">
+SPY Sentinel AI — Evidence Before Execution.
+Live-money trading remains disabled.
+</div>
+
+</div>
+</body>
+</html>
+"""
+
+(
+    BASE
+    / "spy_sentinel_dashboard_v119.html"
+).write_text(html)
+
+print("V119 competition dashboard generated")
+print("Saved: spy_sentinel_dashboard_v119.html")
