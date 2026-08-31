@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPY Sentinel AI — Live Decision Center</title>
+
+<style>
+body{
+margin:0;
+background:#07111f;
+color:#f4f7fb;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.wrap{
+max-width:1180px;
+margin:auto;
+padding:28px;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+padding:16px 18px;
+border:1px solid #263854;
+border-radius:12px;
+background:#101c30;
+}
+
+.green{color:#61e69d}
+.red{color:#ff6975}
+.amber{color:#ffcb6b}
+.blue{color:#62a8ff}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.card{
+background:#14233a;
+border:1px solid #263854;
+border-radius:12px;
+padding:16px;
+}
+
+.panel{
+background:#101c30;
+border:1px solid #263854;
+border-radius:12px;
+padding:18px;
+margin-top:18px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #20314c;
+}
+
+.row:last-child{
+border-bottom:0;
+}
+
+.gate{
+padding:14px;
+background:#14233a;
+border-left:4px solid #ffcb6b;
+margin:10px 0;
+}
+
+.small{
+color:#9fb0c9;
+font-size:13px;
+}
+
+@media(max-width:900px){
+.grid{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<div class="top">
+<strong>SPY SENTINEL AI</strong>
+<strong class="green">LIVE PAPER DECISION CENTER</strong>
+</div>
+
+<h1>Why This Action?</h1>
+<div class="small">
+Live state, execution status, risk controls and abstention logic.
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="small">CURRENT ACTION</div>
+<h2 id="action">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">OPEN POSITIONS</div>
+<h2 id="positions">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">LIVE MONEY</div>
+<h2 class="amber">DISABLED</h2>
+</div>
+
+</div>
+
+<div class="panel">
+<h3>Current Decision Explanation</h3>
+<p id="reason">Loading live state...</p>
+</div>
+
+<div class="panel">
+<h3>Latest Alpaca Order</h3>
+
+<div class="row">
+<span>Symbol</span>
+<strong id="symbol">—</strong>
+</div>
+
+<div class="row">
+<span>Side</span>
+<strong id="side">—</strong>
+</div>
+
+<div class="row">
+<span>Status</span>
+<strong id="status">—</strong>
+</div>
+
+<div class="row">
+<span>Average fill</span>
+<strong id="fill">—</strong>
+</div>
+
+</div>
+
+<div class="panel">
+<h3>Why Not Trade?</h3>
+<div id="gates"></div>
+</div>
+
+<div class="panel">
+<h3>Always-On Safety</h3>
+
+<div class="row">
+<span>Paper only</span>
+<strong class="green">TRUE</strong>
+</div>
+
+<div class="row">
+<span>Maximum contracts</span>
+<strong>1</strong>
+</div>
+
+<div class="row">
+<span>Maximum demo cost</span>
+<strong>$250</strong>
+</div>
+
+<div class="row">
+<span>Profit target</span>
+<strong>+20%</strong>
+</div>
+
+<div class="row">
+<span>Stop loss</span>
+<strong>-15%</strong>
+</div>
+
+<div class="row">
+<span>Maximum hold</span>
+<strong>45 minutes</strong>
+</div>
+
+<div class="row">
+<span>Automatic position monitor</span>
+<strong class="green">ACTIVE</strong>
+</div>
+
+</div>
+
+<div class="small" style="margin-top:20px;">
+SPY Sentinel AI — Evidence Before Execution.
+</div>
+
+</div>
+
+<script>
+async function refreshState(){
+    try{
+        const r = await fetch(
+            'spy_sentinel_live_state_v120.json?ts=' + Date.now()
+        );
+
+        const s = await r.json();
+
+        document.getElementById('action').textContent =
+            s.current_decision.action;
+
+        document.getElementById('positions').textContent =
+            s.open_positions;
+
+        document.getElementById('reason').textContent =
+            s.current_decision.reason;
+
+        document.getElementById('symbol').textContent =
+            s.latest_order.symbol || '—';
+
+        document.getElementById('side').textContent =
+            s.latest_order.side || '—';
+
+        document.getElementById('status').textContent =
+            s.latest_order.status || '—';
+
+        document.getElementById('fill').textContent =
+            s.latest_order.filled_avg_price || '—';
+
+        const gates = document.getElementById('gates');
+        gates.innerHTML = '';
+
+        s.why_not_trade.forEach(g => {
+            const d = document.createElement('div');
+            d.className = 'gate';
+
+            d.innerHTML =
+                '<strong>' + g.gate + '</strong><br>' +
+                '<span class="amber">' + g.status + '</span><br>' +
+                '<span class="small">' + g.meaning + '</span>';
+
+            gates.appendChild(d);
+        });
+
+    } catch(e){
+        document.getElementById('reason').textContent =
+            'Waiting for live state...';
+    }
+}
+
+refreshState();
+setInterval(refreshState, 5000);
+</script>
+
+</body>
+</html>
