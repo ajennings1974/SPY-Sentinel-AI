@@ -1,0 +1,545 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SPY Sentinel AI — Live Decision Center</title>
+
+<style>
+body{
+margin:0;
+background:#07111f;
+color:#f4f7fb;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.wrap{
+max-width:1180px;
+margin:auto;
+padding:28px;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+padding:16px 18px;
+border:1px solid #263854;
+border-radius:12px;
+background:#101c30;
+}
+
+.green{color:#61e69d}
+.red{color:#ff6975}
+.amber{color:#ffcb6b}
+.blue{color:#62a8ff}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.card{
+background:#14233a;
+border:1px solid #263854;
+border-radius:12px;
+padding:16px;
+}
+
+.panel{
+background:#101c30;
+border:1px solid #263854;
+border-radius:12px;
+padding:18px;
+margin-top:18px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px solid #20314c;
+}
+
+.row:last-child{
+border-bottom:0;
+}
+
+.gate{
+padding:14px;
+background:#14233a;
+border-left:4px solid #ffcb6b;
+margin:10px 0;
+}
+
+.small{
+color:#9fb0c9;
+font-size:13px;
+}
+
+@media(max-width:900px){
+.grid{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<div class="top">
+<strong>SPY SENTINEL AI</strong>
+<strong class="green">LIVE PAPER DECISION CENTER</strong>
+</div>
+
+<h1>Why This Action?</h1>
+<div class="small">
+Live state, execution status, risk controls and abstention logic.
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="small">CURRENT ACTION</div>
+<h2 id="action">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">OPEN POSITIONS</div>
+<h2 id="positions">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">LIVE MONEY</div>
+<h2 class="amber">DISABLED</h2>
+</div>
+
+</div>
+
+<div class="panel">
+<h3>Live Candidate Intelligence</h3>
+
+<div class="grid">
+<div class="card">
+<div class="small">SPY PRICE</div>
+<h2 id="spyPrice">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">OPTION CANDIDATE</div>
+<h2 id="candidateSymbol">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">PAPER READINESS</div>
+<h2 id="paperReadiness">Loading...</h2>
+</div>
+</div>
+
+<div class="row"><span>Type</span><strong id="candidateType">—</strong></div>
+<div class="row"><span>Bid</span><strong id="candidateBid">—</strong></div>
+<div class="row"><span>Ask</span><strong id="candidateAsk">—</strong></div>
+<div class="row"><span>Spread</span><strong id="candidateSpread">—</strong></div>
+<div class="row"><span>Delta</span><strong id="candidateDelta">—</strong></div>
+<div class="row"><span>Estimated Cost</span><strong id="candidateCost">—</strong></div>
+<div class="row"><span>Validated Readiness</span><strong id="validatedReadiness">—</strong></div>
+</div>
+
+<div class="panel">
+<h3>Current Decision Explanation</h3>
+<p id="reason">Loading live state...</p>
+</div>
+
+<div class="panel">
+<h3>Latest Alpaca Order</h3>
+
+<div class="row">
+<span>Symbol</span>
+<strong id="symbol">—</strong>
+</div>
+
+<div class="row">
+<span>Side</span>
+<strong id="side">—</strong>
+</div>
+
+<div class="row">
+<span>Status</span>
+<strong id="status">—</strong>
+</div>
+
+<div class="row">
+<span>Average fill</span>
+<strong id="fill">—</strong>
+</div>
+
+</div>
+
+<div class="panel">
+<h3>Why Not Trade?</h3>
+<div id="gates"></div>
+</div>
+
+<div class="panel">
+<h3>Trade Eligibility</h3>
+
+<div class="grid">
+
+<div class="card">
+<div class="small">PAPER-DEMO ELIGIBLE</div>
+<h2 id="paperEligible">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">VALIDATED-STRATEGY ELIGIBLE</div>
+<h2 id="validatedEligible">Loading...</h2>
+</div>
+
+<div class="card">
+<div class="small">LIVE-MONEY ELIGIBLE</div>
+<h2 id="liveEligible" class="amber">NO</h2>
+</div>
+
+</div>
+</div>
+
+<div class="panel">
+<h3>What Would Have To Change?</h3>
+<div id="mustChange"></div>
+</div>
+
+<div class="panel">
+<h3>Gate-by-Gate Decision</h3>
+<div id="gateDetails"></div>
+</div>
+
+<div class="panel">
+<h3>Always-On Safety</h3>
+
+<div class="row">
+<span>Paper only</span>
+<strong class="green">TRUE</strong>
+</div>
+
+<div class="row">
+<span>Maximum contracts</span>
+<strong>1</strong>
+</div>
+
+<div class="row">
+<span>Maximum demo cost</span>
+<strong>$250</strong>
+</div>
+
+<div class="row">
+<span>Profit target</span>
+<strong>+20%</strong>
+</div>
+
+<div class="row">
+<span>Stop loss</span>
+<strong>-15%</strong>
+</div>
+
+<div class="row">
+<span>Maximum hold</span>
+<strong>45 minutes</strong>
+</div>
+
+<div class="row">
+<span>Automatic position monitor</span>
+<strong class="green">ACTIVE</strong>
+</div>
+
+</div>
+
+<div class="small" style="margin-top:20px;">
+SPY Sentinel AI — Evidence Before Execution.
+</div>
+
+</div>
+
+<script>
+async function refreshState(){
+    try{
+        const r = await fetch(
+            'spy_sentinel_live_state_v120.json?ts=' + Date.now()
+        );
+
+        const s = await r.json();
+
+        document.getElementById('action').textContent =
+            s.current_decision.action;
+
+        document.getElementById('positions').textContent =
+            s.open_positions;
+
+        document.getElementById('reason').textContent =
+            s.current_decision.reason;
+
+        document.getElementById('symbol').textContent =
+            s.latest_order.symbol || '—';
+
+        document.getElementById('side').textContent =
+            s.latest_order.side || '—';
+
+        document.getElementById('status').textContent =
+            s.latest_order.status || '—';
+
+        document.getElementById('fill').textContent =
+            s.latest_order.filled_avg_price || '—';
+
+        // -----------------------------------------
+        // LIVE ELIGIBILITY ENGINE
+        // -----------------------------------------
+
+        const accountClear = s.open_positions === 0;
+        const validatedEdge = false;
+        const liveAuthorized = false;
+
+        const paperEligible =
+            accountClear;
+
+        const validatedEligible =
+            paperEligible &&
+            validatedEdge;
+
+        document.getElementById(
+            'paperEligible'
+        ).textContent =
+            paperEligible ? 'YES' : 'NO';
+
+        document.getElementById(
+            'paperEligible'
+        ).className =
+            paperEligible
+            ? 'green'
+            : 'red';
+
+        document.getElementById(
+            'validatedEligible'
+        ).textContent =
+            validatedEligible
+            ? 'YES'
+            : 'NO';
+
+        document.getElementById(
+            'validatedEligible'
+        ).className =
+            validatedEligible
+            ? 'green'
+            : 'amber';
+
+        document.getElementById(
+            'liveEligible'
+        ).textContent =
+            liveAuthorized
+            ? 'YES'
+            : 'NO';
+
+        const mustChange =
+            document.getElementById(
+                'mustChange'
+            );
+
+        mustChange.innerHTML = '';
+
+        const changes = [];
+
+        if (!accountClear) {
+            changes.push(
+                'Close the existing paper position before another demo entry.'
+            );
+        }
+
+        if (!validatedEdge) {
+            changes.push(
+                'A repeatable edge must pass independent validation before the strategy can be promoted beyond controlled demo status.'
+            );
+        }
+
+        changes.push(
+            'Live-money authorization remains disabled regardless of paper-demo eligibility.'
+        );
+
+        changes.forEach(message => {
+            const d =
+                document.createElement('div');
+
+            d.className = 'gate';
+
+            d.innerHTML =
+                '<strong>Required:</strong><br>' +
+                '<span class="small">' +
+                message +
+                '</span>';
+
+            mustChange.appendChild(d);
+        });
+
+        const gateDetails =
+            document.getElementById(
+                'gateDetails'
+            );
+
+        gateDetails.innerHTML = '';
+
+        const decisionGates = [
+            {
+                name: 'Paper environment',
+                pass: true,
+                detail:
+                    'Execution is restricted to Alpaca paper trading.'
+            },
+            {
+                name: 'Account clear',
+                pass: accountClear,
+                detail:
+                    'Only one controlled paper position may exist at a time.'
+            },
+            {
+                name: 'Maximum quantity',
+                pass: true,
+                detail:
+                    'Maximum size is one contract.'
+            },
+            {
+                name: 'Maximum demo cost',
+                pass: true,
+                detail:
+                    'Exposure is capped at $250.'
+            },
+            {
+                name:
+                    'Validated profitability edge',
+                pass: validatedEdge,
+                detail:
+                    'Independent validation has not yet proven a durable edge.'
+            },
+            {
+                name:
+                    'Live-money authorization',
+                pass: false,
+                detail:
+                    'Live-money execution is intentionally unavailable.'
+            }
+        ];
+
+        decisionGates.forEach(g => {
+            const d =
+                document.createElement('div');
+
+            d.className = 'gate';
+
+            const status =
+                g.pass ? 'PASS' : 'FAIL';
+
+            const statusClass =
+                g.pass ? 'green' : 'amber';
+
+            d.innerHTML =
+                '<strong>' +
+                g.name +
+                '</strong><br>' +
+                '<span class="' +
+                statusClass +
+                '">' +
+                status +
+                '</span><br>' +
+                '<span class="small">' +
+                g.detail +
+                '</span>';
+
+            gateDetails.appendChild(d);
+        });
+
+        const gates = document.getElementById('gates');
+        gates.innerHTML = '';
+
+        s.why_not_trade.forEach(g => {
+            const d = document.createElement('div');
+            d.className = 'gate';
+
+            d.innerHTML =
+                '<strong>' + g.gate + '</strong><br>' +
+                '<span class="amber">' + g.status + '</span><br>' +
+                '<span class="small">' + g.meaning + '</span>';
+
+            gates.appendChild(d);
+        });
+
+    } catch(e){
+        document.getElementById('reason').textContent =
+            'Waiting for live state...';
+    }
+}
+
+async function refreshCandidate(){
+    try{
+        const r = await fetch(
+            'spy_sentinel_candidate_v125.json?ts=' + Date.now()
+        );
+
+        const c = await r.json();
+        const x = c.candidate || {};
+
+        document.getElementById('spyPrice').textContent =
+            '$' + Number(c.spy_price).toFixed(2);
+
+        document.getElementById('candidateSymbol').textContent =
+            x.symbol || 'NONE';
+
+        document.getElementById('candidateType').textContent =
+            (x.type || '—').toUpperCase();
+
+        document.getElementById('candidateBid').textContent =
+            x.bid != null ? '$' + Number(x.bid).toFixed(2) : '—';
+
+        document.getElementById('candidateAsk').textContent =
+            x.ask != null ? '$' + Number(x.ask).toFixed(2) : '—';
+
+        document.getElementById('candidateSpread').textContent =
+            c.spread_pct != null
+            ? (Number(c.spread_pct) * 100).toFixed(2) + '%'
+            : 'Unavailable';
+
+        document.getElementById('candidateDelta').textContent =
+            c.delta != null
+            ? Number(c.delta).toFixed(4)
+            : 'Unavailable';
+
+        document.getElementById('candidateCost').textContent =
+            c.estimated_cost != null
+            ? '$' + Number(c.estimated_cost).toFixed(2)
+            : '—';
+
+        const p = c.paper_demo_readiness;
+        const v = c.validated_strategy_readiness;
+
+        document.getElementById('paperReadiness').textContent =
+            p.score + '/' + p.total;
+
+        document.getElementById('paperReadiness').className =
+            p.eligible ? 'green' : 'amber';
+
+        document.getElementById('validatedReadiness').textContent =
+            v.score + '/' + v.total +
+            (v.eligible ? ' — ELIGIBLE' : ' — NOT ELIGIBLE');
+
+    } catch(e){
+        document.getElementById('candidateSymbol').textContent =
+            'Waiting for candidate...';
+    }
+}
+
+refreshState();
+refreshCandidate();
+
+setInterval(refreshState, 5000);
+setInterval(refreshCandidate, 5000);
+</script>
+
+</body>
+</html>
