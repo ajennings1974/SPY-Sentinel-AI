@@ -1,0 +1,20 @@
+{
+  "requirements": {
+    "minimum_total_episodes": 20,
+    "minimum_accepted_trades": 8,
+    "minimum_rejected_episodes": 8
+  },
+  "current": {
+    "total": 1,
+    "accepted": 1,
+    "rejected": 0
+  },
+  "gates": {
+    "minimum_total": false,
+    "minimum_accepted": false,
+    "minimum_rejected": false,
+    "quarantine_clean": true
+  },
+  "challenger_training_eligible": false,
+  "champion_changed": false
+}

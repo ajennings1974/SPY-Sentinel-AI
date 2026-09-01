@@ -1,0 +1,16 @@
+{
+  "challenger_may_train_when": "V158 evidence gate passes",
+  "challenger_may_not_trade": true,
+  "promotion_requirements": {
+    "rolling_out_of_sample_pass": true,
+    "fresh_paper_validation_pass": true,
+    "positive_expectancy_after_costs": true,
+    "max_drawdown_not_worse_than_champion": true,
+    "reproducible_results": true,
+    "no_data_leakage": true,
+    "minimum_sample_size_met": true
+  },
+  "promotion_authority": "Governance gate only",
+  "automatic_self_promotion": false,
+  "live_trading_enabled": false
+}

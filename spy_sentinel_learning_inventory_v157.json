@@ -1,0 +1,7 @@
+{
+  "accepted_episodes": 1,
+  "clean_rejected_episodes": 0,
+  "quarantined_episodes": 1,
+  "total_clean_learning_episodes": 1,
+  "quarantined_data_allowed": false
+}
