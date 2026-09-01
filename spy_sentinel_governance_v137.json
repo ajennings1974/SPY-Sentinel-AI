@@ -1,0 +1,34 @@
+{
+  "generated_utc": "2026-09-01T18:48:06.721593+00:00",
+  "architecture": {
+    "champion": "SPY_SENTINEL_CHAMPION_V1",
+    "challenger": "NOT YET TRAINED",
+    "automatic_retraining": false,
+    "automatic_promotion": false
+  },
+  "current_learning_state": {
+    "experience_episodes": 1,
+    "minimum_experience_episodes_for_challenger": 20,
+    "challenger_training_eligible": false
+  },
+  "promotion_gates": {
+    "no_data_leakage": true,
+    "rolling_out_of_sample_required": true,
+    "fresh_paper_validation_required": true,
+    "transaction_costs_required": true,
+    "risk_and_drawdown_review_required": true,
+    "reproducibility_required": true,
+    "challenger_must_beat_champion": true
+  },
+  "promotion_policy": {
+    "rule_1": "A Challenger may learn from completed experiences.",
+    "rule_2": "A Challenger may never promote itself.",
+    "rule_3": "Historical improvement alone is insufficient.",
+    "rule_4": "The Challenger must survive rolling out-of-sample testing.",
+    "rule_5": "The Challenger must then survive fresh paper validation.",
+    "rule_6": "Risk-adjusted performance must improve without unacceptable drawdown.",
+    "rule_7": "Only after every promotion gate passes may the Challenger replace the Champion."
+  },
+  "status": "COLLECTING EXPERIENCE",
+  "champion_changed": false
+}
