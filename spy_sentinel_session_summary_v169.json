@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-09-01T20:36:11.472525+00:00",
+  "registered_trade_decisions": 0,
+  "registered_no_trade_decisions": 0,
+  "accepted_learning_episodes": 1,
+  "rejected_learning_episodes": 0,
+  "quarantined_records": 1,
+  "top_rejection_reasons": {},
+  "champion": "SPY_SENTINEL_CHAMPION_V1",
+  "champion_changed": false,
+  "challenger": "NOT YET TRAINED",
+  "live_trading_enabled": false
+}

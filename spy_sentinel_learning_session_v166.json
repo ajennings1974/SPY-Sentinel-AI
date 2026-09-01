@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-09-01T20:35:33.210564+00:00",
+  "market_open": false,
+  "candidate_present": true,
+  "candidate_fresh": false,
+  "candidate_age_seconds": 71635.593602,
+  "candidate_key": "125c992346bd2d00",
+  "duplicate_candidate": false,
+  "accepted_episode_count": 1,
+  "rejected_episode_count": 0,
+  "learning_layer_order_submission": false,
+  "status": "MARKET_CLOSED"
+}

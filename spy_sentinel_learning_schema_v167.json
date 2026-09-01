@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "required_identity": [
+    "decision_id",
+    "timestamp_utc",
+    "action",
+    "symbol"
+  ],
+  "candidate_features": [
+    "spy_price",
+    "bid",
+    "ask",
+    "mid",
+    "spread_pct",
+    "delta",
+    "estimated_cost"
+  ],
+  "decision_features": [
+    "action",
+    "reasons",
+    "paper_eligible",
+    "validated_strategy_eligible",
+    "live_money_eligible"
+  ],
+  "accepted_outcome_features": [
+    "entry_price",
+    "exit_price",
+    "holding_minutes",
+    "mfe_pct",
+    "mae_pct",
+    "realized_pnl_pct",
+    "exit_reason"
+  ],
+  "rejected_outcome_features": [
+    "shadow_entry_price",
+    "return_30m",
+    "return_60m",
+    "return_close",
+    "counterfactual_label"
+  ],
+  "allowed_actions": [
+    "TRADE",
+    "NO_TRADE"
+  ],
+  "allowed_counterfactual_labels": [
+    "GOOD_ABSTENTION",
+    "MISSED_OPPORTUNITY",
+    "NEUTRAL",
+    "PENDING"
+  ],
+  "quarantine_if_missing": [
+    "decision_id",
+    "timestamp_utc",
+    "symbol"
+  ],
+  "future_data_as_decision_input": false,
+  "fabricated_missing_values": false
+}
