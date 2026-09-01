@@ -1,0 +1,28 @@
+{
+  "generated_utc": "2026-09-01T23:21:13.134817+00:00",
+  "market_open": false,
+  "candidate_fresh": false,
+  "candidate_age_seconds": 81575.517855,
+  "spy_price": 766.87,
+  "symbol": "SPY260831P00767000",
+  "type": "put",
+  "bid": 0.5,
+  "ask": 0.51,
+  "mid": 0.505,
+  "spread_pct": 0.01980198019801982,
+  "delta": null,
+  "estimated_cost": 50.5,
+  "paper_readiness": {
+    "score": 5,
+    "total": 5,
+    "eligible": true
+  },
+  "validated_readiness": {
+    "score": 5,
+    "total": 6,
+    "eligible": false
+  },
+  "eligible_as_clean_market_evidence": false,
+  "paper_order_submitted": false,
+  "live_order_submitted": false
+}
