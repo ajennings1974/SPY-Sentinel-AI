@@ -1,0 +1,40 @@
+{
+  "decision_id": null,
+  "underlying": "SPY",
+  "option_symbol": "SPY260831P00767000",
+  "market_context": {
+    "spy_observed_price": 766.87,
+    "option_type": "put",
+    "bid": 0.5,
+    "ask": 0.51,
+    "spread_pct": 0.01980198019801982,
+    "delta": null,
+    "estimated_cost": 50.5
+  },
+  "trade": {
+    "entry_price": 1.4,
+    "exit_price": 0.84,
+    "quantity": 1.0,
+    "holding_minutes": 38.13288831666667,
+    "realized_pnl_dollars": -55.99999999999999,
+    "realized_pnl_pct": -0.4,
+    "exit_reason": "STOP_LOSS"
+  },
+  "excursion": {
+    "maximum_favorable_excursion_pct": null,
+    "maximum_adverse_excursion_pct": null,
+    "status": "NOT YET AVAILABLE \u2014 WILL BE CAPTURED LIVE ON FUTURE TRADES"
+  },
+  "labels": {
+    "primary_outcome": "LOSS_LIMIT_EVENT",
+    "profitable": false,
+    "stop_loss_hit": true,
+    "eligible_for_learning": true
+  },
+  "model_governance": {
+    "champion_changed": false,
+    "challenger_allowed_to_train": true,
+    "automatic_champion_promotion": false,
+    "independent_validation_required": true
+  }
+}
