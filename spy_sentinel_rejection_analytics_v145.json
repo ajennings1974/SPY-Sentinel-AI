@@ -1,0 +1,20 @@
+{
+  "trades_taken": 1,
+  "candidates_rejected": 1,
+  "top_rejection_reasons": [
+    [
+      "VALIDATION_NOT_PROVEN",
+      1
+    ],
+    [
+      "LIVE_AUTH_DISABLED",
+      1
+    ]
+  ],
+  "counterfactual": {
+    "tracked_rejections": 0,
+    "would_currently_be_profitable": 0,
+    "would_currently_be_losing": 0,
+    "approximately_flat": 0
+  }
+}
