@@ -1,0 +1,18 @@
+{
+  "generated_utc": "2026-09-01T19:12:09.681351+00:00",
+  "decision_id": null,
+  "symbol": "SPY260831P00767000",
+  "rejected": true,
+  "rejection_reasons": [
+    "VALIDATION_NOT_PROVEN",
+    "LIVE_AUTH_DISABLED"
+  ],
+  "shadow_entry_price": 0.505,
+  "current_shadow_price": 0.505,
+  "counterfactual_return_pct": null,
+  "counterfactual_result": "PENDING",
+  "would_have_profited": null,
+  "would_have_lost": null,
+  "paper_order_submitted": false,
+  "live_order_submitted": false
+}
