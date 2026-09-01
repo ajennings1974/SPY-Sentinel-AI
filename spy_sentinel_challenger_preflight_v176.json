@@ -1,0 +1,10 @@
+{
+  "training_eligible": false,
+  "clean_episode_count": 1,
+  "accepted_count": 1,
+  "rejected_count": 0,
+  "feature_contract_loaded": true,
+  "promotion_contract_loaded": true,
+  "automatic_promotion": false,
+  "live_trading_enabled": false
+}

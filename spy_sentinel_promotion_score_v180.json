@@ -1,0 +1,15 @@
+{
+  "promotion_gates": {
+    "rolling_oos_pass": false,
+    "fresh_paper_pass": false,
+    "positive_expectancy_after_costs": false,
+    "drawdown_not_worse": false,
+    "abstention_quality_not_worse": false,
+    "reproducible": false,
+    "no_leakage": false
+  },
+  "passed": 0,
+  "total": 7,
+  "promotion_ready": false,
+  "champion_changed": false
+}

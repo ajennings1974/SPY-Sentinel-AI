@@ -1,0 +1,17 @@
+{
+  "champion_id": "SPY_SENTINEL_CHAMPION_V1",
+  "decision_authority": "ACTIVE PAPER DECISION AUTHORITY",
+  "baseline_metrics_required": [
+    "trade_count",
+    "win_rate",
+    "average_return",
+    "expectancy",
+    "max_drawdown",
+    "profit_factor",
+    "good_abstention_rate",
+    "missed_opportunity_rate"
+  ],
+  "promotion_rule": "Challenger must beat Champion on risk-adjusted out-of-sample performance.",
+  "champion_may_not_self_modify": true,
+  "live_trading_enabled": false
+}
