@@ -1,0 +1,25 @@
+{
+  "feature_observations": {
+    "spy_observed_price": [
+      {
+        "value": 766.87,
+        "decision_quality": 0.0
+      }
+    ],
+    "spread_pct": [
+      {
+        "value": 0.01980198019801982,
+        "decision_quality": 0.0
+      }
+    ],
+    "estimated_cost": [
+      {
+        "value": 50.5,
+        "decision_quality": 0.0
+      }
+    ]
+  },
+  "episode_count": 3,
+  "status": "INSUFFICIENT SAMPLE \u2014 DESCRIPTIVE ONLY",
+  "champion_changed": false
+}

@@ -1,0 +1,11 @@
+{
+  "generated_utc": "2026-09-01T23:36:02.668365+00:00",
+  "clean_learning_episodes": 1,
+  "accepted_episodes": 1,
+  "clean_rejected_episodes": 0,
+  "challenger_training_eligible": false,
+  "feature_learning_status": "INSUFFICIENT SAMPLE \u2014 DESCRIPTIVE ONLY",
+  "next_priority": "COLLECT CLEAN MARKET-HOURS EPISODES",
+  "champion_changed": false,
+  "live_trading": false
+}

@@ -1,0 +1,39 @@
+{
+  "required_identity": [
+    "decision_id",
+    "decision_timestamp_utc",
+    "action",
+    "symbol"
+  ],
+  "decision_time_features": [
+    "spy_price",
+    "option_type",
+    "bid",
+    "ask",
+    "mid",
+    "spread_pct",
+    "estimated_cost",
+    "time_of_day"
+  ],
+  "accepted_trade_outcome": [
+    "entry_price",
+    "exit_price",
+    "holding_minutes",
+    "realized_pnl_pct",
+    "exit_reason",
+    "mfe_pct",
+    "mae_pct"
+  ],
+  "rejected_trade_outcome": [
+    "counterfactual_return_30m",
+    "counterfactual_return_60m",
+    "counterfactual_return_close",
+    "counterfactual_label"
+  ],
+  "governance": {
+    "future_information_allowed_as_input": false,
+    "quarantined_data_allowed": false,
+    "missing_values_fabricated": false,
+    "champion_changed_automatically": false
+  }
+}
