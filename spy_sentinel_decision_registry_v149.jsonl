@@ -1,0 +1,1 @@
+{"decision_id": "decision-283f1fbb8944", "timestamp_utc": "2026-09-01T20:11:18.861076+00:00", "action": "TEST_ONLY", "symbol": null, "reasons": ["PIPELINE_TEST"], "candidate_snapshot": {}, "paper_order_submitted": false, "live_order_submitted": false, "counterfactual_status": "NOT_APPLICABLE", "eligible_for_learning": true, "champion_changed": false}

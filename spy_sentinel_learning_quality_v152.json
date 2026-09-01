@@ -1,0 +1,8 @@
+{
+  "accepted_learning_episodes": 1,
+  "clean_rejection_episodes": 0,
+  "quarantined_rejection_episodes": 1,
+  "registered_decisions": 1,
+  "quarantined_data_can_train": false,
+  "automatic_champion_promotion": false
+}
