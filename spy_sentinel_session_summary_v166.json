@@ -1,0 +1,10 @@
+{
+  "generated_utc": "2026-09-01T20:21:39.503694+00:00",
+  "trades": 0,
+  "no_trade_decisions": 0,
+  "pending_counterfactuals": 0,
+  "top_rejection_reasons": {},
+  "champion_changed": false,
+  "automatic_retraining": false,
+  "live_trading": false
+}

@@ -1,0 +1,1 @@
+{"decision_id": "session-16df9cd8479c", "timestamp_utc": "2026-09-01T20:20:48.061920+00:00", "action": "TEST_ONLY", "symbol": null, "candidate_snapshot": {}, "reasons": ["PIPELINE_TEST"], "counterfactual_required": false, "lifecycle_required": false, "champion_changed": false, "automatic_model_change": false}
