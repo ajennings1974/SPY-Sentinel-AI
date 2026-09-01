@@ -1,0 +1,40 @@
+{
+  "features": {
+    "spy_observed_price": {
+      "count": 1,
+      "present": 1,
+      "missing": 0
+    },
+    "option_type": {
+      "count": 1,
+      "present": 1,
+      "missing": 0
+    },
+    "bid": {
+      "count": 1,
+      "present": 1,
+      "missing": 0
+    },
+    "ask": {
+      "count": 1,
+      "present": 1,
+      "missing": 0
+    },
+    "spread_pct": {
+      "count": 1,
+      "present": 1,
+      "missing": 0
+    },
+    "delta": {
+      "count": 1,
+      "present": 0,
+      "missing": 1
+    },
+    "estimated_cost": {
+      "count": 1,
+      "present": 1,
+      "missing": 0
+    }
+  },
+  "episode_count": 1
+}

@@ -1,0 +1,55 @@
+{
+  "ranking": [
+    {
+      "feature": "spy_observed_price",
+      "completeness_score": 1.0,
+      "episode_support": 1,
+      "predictive_score": null,
+      "status": "INSUFFICIENT EXPERIENCE"
+    },
+    {
+      "feature": "option_type",
+      "completeness_score": 1.0,
+      "episode_support": 1,
+      "predictive_score": null,
+      "status": "INSUFFICIENT EXPERIENCE"
+    },
+    {
+      "feature": "bid",
+      "completeness_score": 1.0,
+      "episode_support": 1,
+      "predictive_score": null,
+      "status": "INSUFFICIENT EXPERIENCE"
+    },
+    {
+      "feature": "ask",
+      "completeness_score": 1.0,
+      "episode_support": 1,
+      "predictive_score": null,
+      "status": "INSUFFICIENT EXPERIENCE"
+    },
+    {
+      "feature": "spread_pct",
+      "completeness_score": 1.0,
+      "episode_support": 1,
+      "predictive_score": null,
+      "status": "INSUFFICIENT EXPERIENCE"
+    },
+    {
+      "feature": "estimated_cost",
+      "completeness_score": 1.0,
+      "episode_support": 1,
+      "predictive_score": null,
+      "status": "INSUFFICIENT EXPERIENCE"
+    },
+    {
+      "feature": "delta",
+      "completeness_score": 0.0,
+      "episode_support": 1,
+      "predictive_score": null,
+      "status": "INSUFFICIENT EXPERIENCE"
+    }
+  ],
+  "episode_count": 1,
+  "predictive_ranking_enabled": false
+}
