@@ -1,0 +1,15 @@
+{
+  "generated_utc": "2026-09-01T20:39:40.490526+00:00",
+  "champion": {
+    "name": "SPY_SENTINEL_CHAMPION_V1",
+    "status": "ACTIVE PAPER DECISION AUTHORITY"
+  },
+  "challenger": {
+    "name": "SPY_SENTINEL_CHALLENGER_V1",
+    "status": "WAITING FOR CLEAN EXPERIENCE",
+    "execution_permission": false
+  },
+  "promotion_status": "NOT ELIGIBLE",
+  "champion_changed": false,
+  "live_trading_enabled": false
+}
