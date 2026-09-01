@@ -1,0 +1,11 @@
+{
+  "trades_taken": 0,
+  "no_trade_decisions": 0,
+  "test_decisions": 1,
+  "top_rejection_reasons": {
+    "PIPELINE_TEST": 1
+  },
+  "quarantined_learning_records": 1,
+  "quarantined_records_train_challenger": false,
+  "champion_changed": false
+}
