@@ -1,0 +1,18 @@
+{
+  "decision_id": "spy-b46ccca28fec",
+  "status": "OPEN",
+  "symbol": "SIM_SPY_OPTION",
+  "qty": 1,
+  "entry_price": 1.0,
+  "first_seen_utc": "2026-09-01T18:53:07.740868+00:00",
+  "mfe_pct": 0.12,
+  "mae_pct": -0.2,
+  "exit_pending": true,
+  "exit_reason": "STOP_LOSS",
+  "exit_order_id": null,
+  "monitor_ticks": 5,
+  "current_price": 0.8,
+  "current_pl_pct": -0.2,
+  "holding_minutes": 31,
+  "spy_price_latest": 500.0
+}
