@@ -1,0 +1,2 @@
+46311 tee FINAL_PROOF_FREEZE_20260903_144110/caffeinate_status.txt
+84963 caffeinate -dimsu

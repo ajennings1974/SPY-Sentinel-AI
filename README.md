@@ -1,120 +1,198 @@
 # SPY Sentinel AI
 
-**Evidence Before Execution**
+**An Alpaca-connected paper trading agent with governed evidence, hard safety boundaries, auditable mistakes, and independently gated learning.**
 
-SPY Sentinel AI is an AI-assisted trading research and risk-gating system built for the Alpaca AI Trading Agents Hackathon.
+SPY Sentinel AI observes live SPY and options data, evaluates opportunities, records TRADE / NO-TRADE decisions, measures outcomes or counterfactuals, and prevents questionable evidence or unvalidated learning from changing production behavior.
 
-Its purpose is not to force trades.
+SPY Sentinel has demonstrated a controlled Alpaca paper-trading lifecycle while keeping evidence collection and learning isolated from execution authority.
 
-Its purpose is to test strategies rigorously, reject weak evidence, preserve untouched data, and block execution until a repeatable edge is demonstrated.
+## Judge Summary
 
-## Current System Decision
+SPY Sentinel currently demonstrates:
 
-**NO TRADE**
+- Live Alpaca SPY market observation
+- Fresh paired SPY + current option evidence
+- TRADE / NO-TRADE decision logic
+- Deterministic safety and risk gates
+- Controlled Alpaca paper execution
+- Position monitoring and exit logic
+- Audit logging and evidence preservation
+- Counterfactual outcome measurement when no trade occurs
+- Evidence-quality quarantine
+- Challenger learning readiness
+- Independent validation requirement
+- Champion promotion firewall
+- Zero live-money execution
 
-Current evidence does not justify autonomous execution.
+**Important:** SPY Sentinel does not claim that a profitable edge has been proven. Execution capability has been demonstrated in paper mode, while strategy promotion remains gated by independent validation.
 
-Paper trading and live trading remain locked.
+## Governed Evidence Chain
 
-## What SPY Sentinel Tests
+Observe  
+↓  
+Evaluate  
+↓  
+TRADE / NO TRADE  
+↓  
+Experience Log  
+↓  
+Outcome or Counterfactual  
+↓  
+Evidence Quality Check  
+↓  
+Quarantine if Defective  
+↓  
+Challenger  
+↓  
+Independent Validation  
+↓  
+Champion Promotion or Block
 
-SPY Sentinel has evaluated multiple strategy families and modeling approaches, including:
+Every arrow is a gate.
 
-- SPY trend and momentum features
-- time-of-day and volatility regimes
-- opening range breakout logic
-- logistic regression
-- nonlinear machine-learning models
-- adaptive rolling selection
-- cross-market features using QQQ, XLK, and XLF
-- multi-market breadth and relative strength
-- extreme-dislocation setups
-- one-time untouched holdout validation
-- rolling walk-forward evaluation
+A Challenger cannot self-promote, replace the Champion, or gain execution authority without independent validation.
 
-## Validation Philosophy
+## Real Market Evidence
 
-The project follows a strict research process:
+SPY Sentinel collects live Alpaca market evidence for:
 
-1. Develop only on historical training data
-2. Validate chronologically
-3. Avoid look-ahead bias and data leakage
-4. Use rolling out-of-sample windows
-5. Preserve untouched future data
-6. Reject strategies that fail statistical or economic gates
-7. Keep execution disabled until evidence supports deployment
+- SPY latest trade data
+- Current active SPY option contracts
+- Bid
+- Ask
+- Midpoint
+- Spread
+- Independent source timestamps
 
-## Latest Research Status
+A September 3 proof freeze contained:
 
-| Test | Result |
-|---|---|
-| Historical strategy edge | NOT PROVEN |
-| One-time true holdout candidate | FAILED |
-| Adaptive rolling selection | FAILED |
-| Full-history multi-market model | FAILED |
-| Extreme-dislocation family | FAILED |
-| Fresh Aug 17–28 validation data | UNTOUCHED |
-| Paper trading | LOCKED |
-| Live trading | LOCKED |
+- **43 unattended SPY observations**
+- **76 fresh paired SPY + option observations**
+- **119 total evidence records**
 
-## Latest Rolling Model Snapshot
+These are evidence observations, not profitability claims.
 
-- Mean balanced accuracy: **50.32%**
-- Mean AUC: **50.32%**
-- Positive rolling windows: **6 / 10**
-- Result: **FAILED GENERALIZATION GATE**
+## Mistake Quarantine
 
-SPY Sentinel does not treat a weak or inconsistent result as an edge.
+An earlier collector produced fresh SPY prices while carrying option context inherited from an older audit.
 
-## Risk Guardrails
+The SPY observations were valid, but the option-quote freshness could not be independently proven.
 
-- Data leakage protection: **ACTIVE**
-- Fresh-data preservation: **ACTIVE**
-- Paper execution: **LOCKED**
-- Live execution: **LOCKED**
-- No strategy is promoted solely because it performs well on one historical period
+SPY Sentinel did not rewrite the historical records.
 
-## Dashboard
+Instead:
 
-Open:
+**DETECTED → PRESERVED → QUARANTINED → EXCLUDED FROM CLEAN LEARNING**
 
-`spy_sentinel_dashboard.html`
+The collection process was then corrected prospectively using independently timestamped Alpaca option quotes.
 
-The dashboard summarizes the current research state, validation pipeline, execution gate, and risk controls.
+Questionable evidence is therefore prevented from contaminating the learning pipeline.
 
-## Data
+## Learning Without Pretending to Trade
 
-Primary research data includes:
+SPY Sentinel can measure what would have happened after an observed opportunity even when no order was submitted.
 
-- SPY 5-minute historical data
-- QQQ 5-minute historical data
-- XLK 5-minute historical data
-- XLF 5-minute historical data
+These counterfactual outcomes are learning evidence, not fake trade history.
 
-The verified base dataset contains approximately three years of aligned 5-minute market history through August 14, 2026.
+The system distinguishes:
 
-Fresh August 17–28 data remains reserved for future shadow-forward validation.
+- actual trades
+- paper trades
+- observed opportunities
+- counterfactual outcomes
+- executable fills
+- theoretical midpoint values
 
-## Core Principle
+Paper and shadow results must be discounted for spread, slippage, latency, and liquidity.
 
-> A trading system should be allowed to say **NO TRADE**.
+## Controlled Paper Execution
 
-SPY Sentinel AI is designed to reject weak strategies rather than manufacture confidence.
+SPY Sentinel has separately demonstrated a controlled Alpaca paper-trading lifecycle including:
 
-Execution remains locked until independent evidence demonstrates a repeatable and economically meaningful edge.
+- opportunity evaluation
+- risk authorization
+- order submission
+- position monitoring
+- duplicate-position protection
+- exit logic
+- profit target
+- loss limit
+- time-based exit
+- audit logging
+
+The evidence collectors and learning pipelines remain zero-order by design.
+
+## Promotion Firewall
+
+- **Challenger evidence:** READY when thresholds are satisfied
+- **Self-promotion:** BLOCKED BY DESIGN
+- **Independent validation:** REQUIRED
+- **Champion replacement:** PROTECTED until validation passes
+- **Live trading:** DISABLED
+
+Training readiness does not equal production authorization.
+
+## Judge Proof
+
+The Judge Proof Bundle presents:
+
+1. Current Proof State
+2. Fresh Market Proof
+3. Mistake Caught by the System
+4. Paper Reality
+5. Learning Without Pretending to Trade
+6. Promotion Status
+7. Governed Learning Path
+
+A credential-free verifier checks saved proof artifacts without Alpaca credentials.
+
+Run:
+
+    python3 verify_judge_proof_v217.py
+
+A healthy checkpoint ends with:
+
+    FINAL VERDICT: PASS
 
 ## Technology
 
 - Python
+- Alpaca APIs
 - pandas
 - scikit-learn
-- Alpaca
+- HTML/CSS Judge Proof dashboard
 - GitHub
 - GitHub Copilot
-- HTML/CSS dashboard
+- macOS launchd background services
 
-## Project Status
+## Safety Position
 
-**Research mode**
+SPY Sentinel is designed to say **NO TRADE** when evidence or risk conditions are insufficient.
 
-No autonomous orders are currently permitted.
+No live-money execution is enabled.
+
+The project does not weaken gates to manufacture activity.
+
+## What Makes SPY Sentinel Different
+
+SPY Sentinel is not simply an autonomous trader.
+
+Its core design question is:
+
+**Which evidence is allowed to teach the system, and what must happen before that learning is allowed to change production behavior?**
+
+That creates a governed chain from real market observation to learning and promotion, with explicit protection against contaminated evidence, false certainty, and uncontrolled self-modification.
+
+## Current Status
+
+**Alpaca-connected paper agent:** demonstrated  
+**Live market evidence:** active  
+**Fresh paired SPY + options evidence:** active  
+**Outcome labeling:** active  
+**Mistake quarantine:** demonstrated  
+**Challenger learning readiness:** demonstrated  
+**Independent validation:** required  
+**Champion protection:** active  
+**Live-money execution:** disabled
+
+SPY Sentinel AI is built to improve carefully, preserve its mistakes, and refuse to promote unvalidated conclusions.

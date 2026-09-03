@@ -1,0 +1,7 @@
+-	0	com.spysentinel.monitor
+-	0	com.spysentinel.learning
+-	1	com.spysentinel.positionmonitor
+-	0	com.spysentinel.paired
+-	0	com.spysentinel.judge
+-	1	com.spysentinel.telemetry
+-	0	com.spysentinel.evidence
