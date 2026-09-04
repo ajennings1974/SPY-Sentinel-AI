@@ -1,5 +1,13 @@
 # SPY Sentinel AI
 
+## 🚨 JUDGES: OPEN THE LIVE PROOF FIRST
+
+### [▶ OPEN SPY SENTINEL — LIVE JUDGE PROOF](https://ajennings1974.github.io/SPY-Sentinel-AI/)
+
+**Real collected evidence • mistake quarantine • governed learning • independent promotion firewall**
+
+---
+
 **An Alpaca-connected paper trading agent with governed evidence, hard safety boundaries, auditable mistakes, and independently gated learning.**
 
 SPY Sentinel AI observes live SPY and options data, evaluates opportunities, records TRADE / NO-TRADE decisions, measures outcomes or counterfactuals, and prevents questionable evidence or unvalidated learning from changing production behavior.
