@@ -8,11 +8,23 @@
 
 ---
 
-**An Alpaca-connected paper trading agent with governed evidence, hard safety boundaries, auditable mistakes, and independently gated learning.**
+**An Alpaca-connected SPY options paper agent governed by two separate authorities: evidence must earn the right to become learning, and learning must independently earn the right to replace the Champion.**
 
 SPY Sentinel AI observes live SPY and options data, evaluates opportunities, records TRADE / NO-TRADE decisions, measures outcomes or counterfactuals, and prevents questionable evidence or unvalidated learning from changing production behavior.
 
 SPY Sentinel has demonstrated a controlled Alpaca paper-trading lifecycle while keeping evidence collection and learning isolated from execution authority.
+
+## Two Separate Authorities
+
+**Evidence Authority** — Is the evidence trustworthy enough to become learning?
+
+**Promotion Authority** — Is that learning independently validated enough to replace the Champion?
+
+SPY Sentinel separates those permissions. Questionable evidence can be preserved and quarantined before it enters clean learning, and even eligible learning cannot self-promote into production behavior.
+
+**Hackathon evidence demonstrates that this governance pipeline operated on real market evidence. It does not prove alpha, repeatable edge, or superiority versus a random or passive baseline.**
+
+---
 
 ## Judge Summary
 
